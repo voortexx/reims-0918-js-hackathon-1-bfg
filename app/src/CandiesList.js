@@ -1,5 +1,5 @@
 import React from "react";
-import { CardDeck, Button } from "reactstrap";
+import { CardDeck } from "reactstrap";
 import OneCandy from "./OneCandy";
 
 const CandiesList = ({ myCandies }) => {
@@ -7,7 +7,8 @@ const CandiesList = ({ myCandies }) => {
     <React.Fragment>
       <CardDeck className="justify-content-center">
         {myCandies.map(oneCandy => (
-          <OneCandy oneCandy={oneCandy} />
+          <OneCandy oneCandy={oneCandy} key={
+            oneCandy.id}/>
         ))}
       </CardDeck>
     </React.Fragment>

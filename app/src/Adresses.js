@@ -1,6 +1,4 @@
 import React from "react";
-
-import oneCandy from "./OneCandy";
 import {
   Card,
   CardDeck,

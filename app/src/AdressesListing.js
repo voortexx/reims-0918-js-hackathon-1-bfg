@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Adresses from "./Adresses";
 import CandiesList from "./CandiesList"
-import { Container, CardDeck, Button, Col, Row } from "reactstrap";
+import { CardDeck, Button, Col, Row } from "reactstrap";
 
 const AdressesListing = props => (
   <div>
