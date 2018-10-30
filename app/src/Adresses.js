@@ -15,13 +15,18 @@ const Adresses = props => {
       <Card style={{ width: "450px", margin: "10px" }}>
         <CardBody>
           <Row>
-            <CardTitle>{props.adresse.houseNumber}</CardTitle>
+            <Col xs="2">
+              <CardTitle>{props.adresse.houseNumber}</CardTitle>
+            </Col>
+            <Col xs="5">
+              <CardSubtitle>{props.adresse.properties.name}</CardSubtitle>
+
+              <CardText>
+                {props.adresse.properties.postcode}{" "}
+                {props.adresse.properties.city}
+              </CardText>
+            </Col>
           </Row>
-          <CardSubtitle>{props.adresse.properties.name}</CardSubtitle>
-          <CardText>
-            {props.adresse.properties.postcode}
-            {props.adresse.properties.city}
-          </CardText>
         </CardBody>
       </Card>
     </div>
