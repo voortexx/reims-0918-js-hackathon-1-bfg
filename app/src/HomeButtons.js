@@ -25,7 +25,6 @@ const HomeButtons = props => {
 
       <Button onClick={() => props.tabsOpeningFunction("inventaire")} 
       color="primary">
-        {" "}
         <div id="word">
           <div id="glitches">
             <span id="main">Inventory</span>
