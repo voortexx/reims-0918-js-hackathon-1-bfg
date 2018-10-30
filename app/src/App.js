@@ -87,7 +87,7 @@ class App extends Component {
             <HomeButtons />
           )}
         </Container>
-        {this.state.adresses.data !== undefined && (
+        {this.state.huntingOpen && (
           <Adresses adresse={this.state.adresses.data.features[0]} />
         )}
         {this.state.huntingOpen && (
