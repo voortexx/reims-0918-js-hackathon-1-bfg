@@ -3,12 +3,9 @@ import { Container, Row, Col } from "reactstrap";
 
 const Footer = () => (
   <Container fluid>
-    <Row className="background">
-      <Col sm="6">
-        <img className="img" src="" alt="pumpkin" />
-      </Col>
-      <Col className="text-right wilders" sm="6">
-        Made with <span className="heart">❤</span> by{" "}
+    <Row className="footer">
+      <Col className="wilders" sm="6">
+        Made with <span className="pumpkin">🎃</span> by{" "}
         <a
           className="test"
           href="https://www.linkedin.com/in/fabien-raymond-41227114b/"
