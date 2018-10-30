@@ -1,25 +1,50 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      adresses: [],
+      candiesList: [],
+      myCandies: []
+    };
+  }
+
+  componentDidMount() {
+    this.callApiAdresses();
+    this.callApiCandies();
+  }
+
+  callApiAdresses() {
+    fetch(
+      `https://api-adresse.data.gouv.fr/search/?q=Reims&type=street&postcode=51100&limit=20`
+    )
+      .then(results => results.json()) // conversion du résultat en JSON
+      .then(data => {
+        data.used = false;
+        this.setState({
+          adresses: { data }
+        });
+      });
+  }
+
+  callApiCandies() {
+    fetch(`https://fr-en.openfoodfacts.org/category/candies.json`)
+      .then(results => results.json()) // conversion du résultat en JSON
+      .then(data => {
+        data.used = false;
+        this.setState({
+          candiesList: { data }
+        });
+      });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <p>Test</p>
       </div>
     );
   }
