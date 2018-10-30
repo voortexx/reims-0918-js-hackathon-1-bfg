@@ -101,7 +101,9 @@ class App extends Component {
     });
     myCandies.push(newCandy);
     this.setState({
-      myCandies: myCandies
+      myCandies: myCandies,
+      adresseOpen: false,
+      myCandiesOpen: false
     });
   }
 
