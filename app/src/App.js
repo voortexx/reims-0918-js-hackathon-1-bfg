@@ -4,10 +4,8 @@ import { Container, Button } from "reactstrap";
 import HomeButtons from "./HomeButtons";
 import Header from "./Header";
 import Footer from "./Footer";
-import Adresses from "./Adresses";
 import getRandomNumber from "./getRandomNumber";
 import CandiesList from "./CandiesList";
-import HuntModal from "./HuntModal";
 import AdressesListing from "./AdressesListing";
 
 import "./App.css";
@@ -67,11 +65,15 @@ class App extends Component {
   candiesAttribution() {
     const listAdresses = this.state.adresses.data.features;
     listAdresses.map(oneAdress => {
+      const listNumberRandom = [];
       const candiesHouse = [];
       for (let j = 5; j > 0; j--) {
         const randomN = getRandomNumber(20);
-        let oneCandy = this.state.candiesList.data.products[randomN];
-        candiesHouse.push({ ...oneCandy });
+        if (!listNumberRandom.includes(randomN)) {
+          listNumberRandom.push(randomN);
+          let oneCandy = this.state.candiesList.data.products[randomN];
+          candiesHouse.push({ ...oneCandy });
+        } else j++;
       }
       oneAdress.candiesHouse = candiesHouse;
     });
