@@ -89,11 +89,13 @@ class Adresses extends React.Component {
                           {oneCandy.product_name}
                         </CardTitle>
                         <Button
-                          onClick={() =>
+                          onClick={() => {
                             this.props.selectCandy(
                               this.props.adresseInfos.candiesHouse[0].id
-                            )
-                          }
+                            );
+
+                            this.toggle();
+                          }}
                         >
                           Choisir ce bonbon
                         </Button>
