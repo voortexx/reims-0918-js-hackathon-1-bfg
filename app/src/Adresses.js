@@ -11,14 +11,14 @@ import {
 
 const Adresses = props => {
   return (
-    <div>
-      <Card style={{ width: "450px", margin: "10px" }}>
+    <Col xs="4" className="mb-3">
+      <Card>
         <CardBody>
           <Row>
-            <Col xs="2">
+            <Col xs="4">
               <CardTitle>{props.adresseInfos.houseNumber}</CardTitle>
             </Col>
-            <Col xs="5">
+            <Col xs="8">
               <CardSubtitle>{props.adresseInfos.properties.name}</CardSubtitle>
 
               <CardText>
@@ -29,7 +29,7 @@ const Adresses = props => {
           </Row>
         </CardBody>
       </Card>
-    </div>
+    </Col>
   );
 };
 
