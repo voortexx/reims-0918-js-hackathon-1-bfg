@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Adresses from "./Adresses";
 import getRandomNumber from "./getRandomNumber";
 import CandiesList from "./CandiesList";
+import AdressesListing from "./AdressesListing";
 
 import "./App.css";
 
@@ -87,8 +88,8 @@ class App extends Component {
             <HomeButtons />
           )}
         </Container>
-        {this.state.adresses.data !== undefined && (
-          <Adresses adresse={this.state.adresses.data.features[0]} />
+        {this.state.huntingOpen && (
+          <AdressesListing adressesList={this.state.adresses.data.features} />
         )}
         {this.state.huntingOpen && (
           <CandiesList candies={this.state.candiesList.data.products[0]} />

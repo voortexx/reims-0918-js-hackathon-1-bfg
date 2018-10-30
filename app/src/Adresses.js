@@ -3,10 +3,10 @@ import React from "react";
 const Adresses = props => {
   return (
     <div>
-      <p>{props.adresse.properties.label}</p>
-      <p>{props.adresse.properties.name}</p>
-      <p>{props.adresse.properties.postcode}</p>
-      <p>{props.adresse.properties.city}</p>
+      <p>{props.adresseInfos.properties.label}</p>
+      <p>{props.adresseInfos.properties.name}</p>
+      <p>{props.adresseInfos.properties.postcode}</p>
+      <p>{props.adresseInfos.properties.city}</p>
     </div>
   );
 };
