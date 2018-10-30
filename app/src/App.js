@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 import HomeButtons from "./HomeButtons";
 import Header from "./Header";
 import Footer from "./Footer";
+import Adresses from "./Adresses";
 import getRandomNumber from "./getRandomNumber";
 
 import "./App.css";
@@ -54,6 +55,10 @@ class App extends Component {
         <Header />
         <Container>
           <HomeButtons />
+
+          {this.state.adresses.data !== undefined && (
+            <Adresses adresse={this.state.adresses.data.features[0]} />
+          )}
         </Container>
 
         <Footer />
