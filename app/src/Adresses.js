@@ -21,7 +21,8 @@ class Adresses extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      visited: false
     };
 
     this.toggle = this.toggle.bind(this);
@@ -29,7 +30,8 @@ class Adresses extends React.Component {
 
   toggle() {
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
+      visited: true
     });
   }
   render() {
@@ -52,17 +54,14 @@ class Adresses extends React.Component {
                 </CardText>
               </Col>
               <Col xs="5">
-                <Button onClick={this.toggle} style={{ width: "100px" }}>
-                  Visit It !
-                </Button>
+                {!this.state.visited ? (
+                  <Button onClick={this.toggle} style={{ width: "100px" }}>
+                    Visit It !
+                  </Button>
+                ) : (
+                  <h5>Already Visit</h5>
+                )}
               </Col>
-              {/* <Button
-              onClick={() =>
-                props.selectCandy(props.adresseInfos.candiesHouse[0].id)
-              }
-            >
-              {props.adresseInfos.candiesHouse[0].product_name}
-            </Button> */}
             </Row>
           </CardBody>
           <Modal
@@ -76,16 +75,18 @@ class Adresses extends React.Component {
             <ModalBody>
               <CardDeck>
                 {this.props.adresseInfos.candiesHouse.map(oneCandy => (
-                  <Col xs="6">
+                  <Col xs="6" key={oneCandy.id}>
                     <Card>
                       <CardImg
                         top
-                        width="30%"
+                        height="200px"
                         src={oneCandy.image_url}
                         alt="Card image cap"
                       />
                       <CardBody>
-                        <CardTitle>{oneCandy.product_name}</CardTitle>
+                        <CardTitle className="text-truncate">
+                          {oneCandy.product_name}
+                        </CardTitle>
                         <Button
                           onClick={() =>
                             this.props.selectCandy(
