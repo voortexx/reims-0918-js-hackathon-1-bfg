@@ -6,7 +6,8 @@ import {
   CardTitle,
   CardSubtitle,
   Col,
-  Row
+  Row,
+  Button
 } from "reactstrap";
 
 const Adresses = props => {
@@ -25,6 +26,9 @@ const Adresses = props => {
                 {props.adresseInfos.properties.postcode}{" "}
                 {props.adresseInfos.properties.city}
               </CardText>
+            </Col>
+            <Col xs="5">
+              <Button style={{ width: "100px" }}>Visit It !</Button>
             </Col>
           </Row>
         </CardBody>
