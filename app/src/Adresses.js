@@ -77,12 +77,16 @@ class Adresses extends React.Component {
                 {this.props.adresseInfos.candiesHouse.map((oneCandy, id) => (
                   <Col xs="6" key={id}>
                     <Card>
-                      <CardImg
-                        top
-                        height="200px"
-                        src={oneCandy.image_url}
-                        alt="Card image cap"
-                      />
+                      {oneCandy.image_url ? (
+                        <CardImg
+                          top
+                          width="30%"
+                          src={oneCandy.image_url}
+                          alt="Card image cap"
+                        />
+                      ) : (
+                        <i className="text-center fas fa-ghost fa-5x p-5" />
+                      )}
                       <CardBody>
                         <CardTitle className="text-truncate">
                           {oneCandy.product_name}
