@@ -55,6 +55,7 @@
   height: 350px;
   justify-content: space-between;
   margin: 100px;
+  background-image: transparent;
 }
 
 #glitches {

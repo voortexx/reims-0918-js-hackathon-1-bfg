@@ -3,7 +3,7 @@ import { Button, Row } from "reactstrap";
 
 const HomeButtons = props => {
   return (
-    <Row>
+    <Row className="justify-content-center">
       <Button
         onClick={() => props.tabsOpeningFunction("adresse")}
         color="primary"
@@ -26,7 +26,8 @@ const HomeButtons = props => {
       </Button>
       <Button
         onClick={() => props.tabsOpeningFunction("inventaire")}
-        color="primary">
+        color="primary"
+      >
         <div id="word">
           <div id="glitches">
             <span id="main">Inventory</span>
@@ -41,7 +42,6 @@ const HomeButtons = props => {
               <span className="letter">r</span>
               <span className="letter">y</span>
             </div>
-            
           </div>
         </div>
         <span class="nbrecandy">{props.myCandies.length}</span>

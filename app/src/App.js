@@ -118,7 +118,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Container>
+        <Container fluid >
           {!this.state.huntingOpen ? (
             <Button onClick={() => this.candiesAttribution()}>
               Lancer la chasse
@@ -135,6 +135,7 @@ class App extends Component {
               backButton={this.backButton}
               selectCandy={this.selectCandy}
               adressesList={this.state.adressesAndCandies}
+              myCandies={this.state.myCandies}
             />
           )}
           {this.state.myCandiesOpen && (
