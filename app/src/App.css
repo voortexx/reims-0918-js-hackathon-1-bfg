@@ -31,10 +31,19 @@
   }
 }
 
-.card {
+.cardList {
+  width: 15%;
+}
+
+  .card {
   margin: 30px;
 
   transition: 0.3s;
+}
+
+.cardList:hover {
+  width: 16%;
+  box-shadow: 0 8px 20px black, 0 8px 20px black;
 }
 
 .card:hover {
@@ -46,6 +55,7 @@
   height: 350px;
   justify-content: space-between;
   margin: 100px;
+  background-image: transparent;
 }
 
 #glitches {
@@ -74,9 +84,16 @@
   margin-left: 102px;
   font-size: 1.8rem;
 }
+
 .letter {
-  animation: up 3s infinite linear;
+  animation: up 2s infinite linear;
+
 }
+
+.nbrecandy {
+  
+}
+
 
 @keyframes up {
   0% {
