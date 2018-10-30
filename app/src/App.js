@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Adresses from "./Adresses";
 import getRandomNumber from "./getRandomNumber";
 import CandiesList from "./CandiesList";
+import AdressesListing from "./AdressesListing";
 
 import "./App.css";
 
@@ -18,8 +19,11 @@ class App extends Component {
       candiesList: [],
       adressesAndCandies: [],
       myCandies: [],
-      huntingOpen: false
+      huntingOpen: false,
+      adresseOpen: false,
+      myCandiesOpen: false
     };
+    this.tabsOpeningSystem = this.tabsOpeningSystem.bind(this);
   }
 
   componentDidMount() {
@@ -29,14 +33,17 @@ class App extends Component {
 
   callApiAdresses() {
     for (let i = 0; i < 20; i++) {
-      let randomNumber = getRandomNumber(100);
-      console.log(randomNumber);
       fetch(
-        `https://api-adresse.data.gouv.fr/search/?q=${randomNumber}+Reims&postcode=51100&limit=20`
+        `https://api-adresse.data.gouv.fr/search/?q=Reims&postcode=51100&limit=20`
       )
         .then(results => results.json()) // conversion du résultat en JSON
         .then(data => {
-          data.features.map(singleData => (singleData.candiesHouse = []));
+          data.features.map(
+            singleData => (
+              (singleData.candiesHouse = []),
+              (singleData.houseNumber = getRandomNumber(100))
+            )
+          );
           this.setState({
             adresses: { data }
           });
@@ -71,6 +78,18 @@ class App extends Component {
     });
   }
 
+  tabsOpeningSystem(tabName) {
+    tabName === "adresse"
+      ? this.setState({
+          adresseOpen: true,
+          myCandiesOpen: false
+        })
+      : this.setState({
+          adresseOpen: false,
+          myCandiesOpen: true
+        });
+  }
+
   render() {
     return (
       <div className="App">
@@ -81,15 +100,16 @@ class App extends Component {
               Lancer la chasse
             </Button>
           ) : (
-            <HomeButtons />
+            <HomeButtons tabsOpeningFunction={this.tabsOpeningSystem} />
+          )}
+          {this.state.adresseOpen && (
+            <AdressesListing adressesList={this.state.adresses.data.features} />
+          )}
+          {this.state.myCandiesOpen && (
+            <CandiesList candies={this.state.candiesList.data.products[0]} />
           )}
         </Container>
-        {this.state.adresses.data !== undefined && (
-          <Adresses adresse={this.state.adresses.data.features[0]} />
-        )}
-        {this.state.huntingOpen && (
-          <CandiesList candies={this.state.candiesList.data.products[0]} />
-        )}
+
         <Footer />
       </div>
     );
