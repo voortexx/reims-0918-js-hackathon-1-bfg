@@ -117,9 +117,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App font">
         <Header />
-        <Container fluid >
+        <Container fluid>
           {!this.state.huntingOpen ? (
             <Button onClick={() => this.candiesAttribution()}>
               Lancer la chasse
@@ -127,8 +127,10 @@ class App extends Component {
           ) : (
             !this.state.adresseOpen &&
             (!this.state.myCandiesOpen && (
-              <HomeButtons tabsOpeningFunction={this.tabsOpeningSystem} 
-              myCandies={this.state.myCandies}/>
+              <HomeButtons
+                tabsOpeningFunction={this.tabsOpeningSystem}
+                myCandies={this.state.myCandies}
+              />
             ))
           )}
           {this.state.adresseOpen && (

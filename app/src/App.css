@@ -35,7 +35,7 @@
   width: 15%;
 }
 
-  .card {
+.card {
   margin: 30px;
 
   transition: 0.3s;
@@ -50,6 +50,9 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+.font {
+  font-family: "Creepster", cursive;
+}
 .btn-primary {
   width: 350px;
   height: 350px;
@@ -87,13 +90,10 @@
 
 .letter {
   animation: up 2s infinite linear;
-
 }
 
 .nbrecandy {
-  
 }
-
 
 @keyframes up {
   0% {
