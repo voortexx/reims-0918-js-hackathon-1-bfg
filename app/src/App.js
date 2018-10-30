@@ -89,11 +89,7 @@ class App extends Component {
           )}
         </Container>
         {this.state.huntingOpen && (
-<<<<<<< HEAD
           <AdressesListing adressesList={this.state.adresses.data.features} />
-=======
-          <Adresses adresse={this.state.adresses.data.features[1]} />
->>>>>>> 56b4478e55915ccd397b9e65339f5702446514dc
         )}
         {this.state.huntingOpen && (
           <CandiesList candies={this.state.candiesList.data.products[0]} />
