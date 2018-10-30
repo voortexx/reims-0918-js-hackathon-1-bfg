@@ -66,11 +66,15 @@ class App extends Component {
   candiesAttribution() {
     const listAdresses = this.state.adresses.data.features;
     listAdresses.map(oneAdress => {
+      const listNumberRandom = [];
       const candiesHouse = [];
       for (let j = 5; j > 0; j--) {
         const randomN = getRandomNumber(20);
-        let oneCandy = this.state.candiesList.data.products[randomN];
-        candiesHouse.push({ ...oneCandy });
+        if (!listNumberRandom.includes(randomN)) {
+          listNumberRandom.push(randomN);
+          let oneCandy = this.state.candiesList.data.products[randomN];
+          candiesHouse.push({ ...oneCandy });
+        } else j++;
       }
       oneAdress.candiesHouse = candiesHouse;
     });
@@ -116,7 +120,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Container fluid >
+        <Container fluid>
           {!this.state.huntingOpen ? (
             <Button onClick={() => this.candiesAttribution()}>
               Lancer la chasse
@@ -124,8 +128,10 @@ class App extends Component {
           ) : (
             !this.state.adresseOpen &&
             (!this.state.myCandiesOpen && (
-              <HomeButtons tabsOpeningFunction={this.tabsOpeningSystem} 
-              myCandies={this.state.myCandies}/>
+              <HomeButtons
+                tabsOpeningFunction={this.tabsOpeningSystem}
+                myCandies={this.state.myCandies}
+              />
             ))
           )}
           {this.state.adresseOpen && (
