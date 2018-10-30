@@ -26,16 +26,20 @@ class App extends Component {
   }
 
   callApiAdresses() {
-    fetch(
-      `https://api-adresse.data.gouv.fr/search/?q=Reims&type=street&postcode=51100&lat=49.257087&lon=4.019713&limit=20`
-    )
-      .then(results => results.json()) // conversion du résultat en JSON
-      .then(data => {
-        data.features.map(singleData => (singleData.candiesHouse = []));
-        this.setState({
-          adresses: { data }
+    for (let i = 0; i < 20; i++) {
+      let randomNumber = getRandomNumber(100);
+      console.log(randomNumber);
+      fetch(
+        `https://api-adresse.data.gouv.fr/search/?q=${randomNumber}+Reims&postcode=51100&limit=20`
+      )
+        .then(results => results.json()) // conversion du résultat en JSON
+        .then(data => {
+          data.features.map(singleData => (singleData.candiesHouse = []));
+          this.setState({
+            adresses: { data }
+          });
         });
-      });
+    }
   }
 
   callApiCandies() {
