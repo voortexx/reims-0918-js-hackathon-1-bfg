@@ -38,7 +38,7 @@
 }
 
 .card:hover {
-  box-shadow: 0 8px 20px black, 0 8px 20px black;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary {

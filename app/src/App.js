@@ -24,6 +24,8 @@ class App extends Component {
       myCandiesOpen: false
     };
     this.tabsOpeningSystem = this.tabsOpeningSystem.bind(this);
+    this.selectCandy = this.selectCandy.bind(this);
+    this.backButton = this.backButton.bind(this);
   }
 
   componentDidMount() {
@@ -90,6 +92,27 @@ class App extends Component {
         });
   }
 
+  selectCandy(id) {
+    let myCandies = this.state.myCandies;
+    let newCandy = this.state.candiesList.data.products.filter(product => {
+      if (product.id === id) {
+        return product;
+      }
+    });
+    myCandies.push(newCandy);
+    this.setState({
+      myCandies: myCandies
+    });
+  }
+
+  backButton() {
+    console.log("test");
+    this.setState({
+      adresseOpen: false,
+      myCandiesOpen: false
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -100,13 +123,23 @@ class App extends Component {
               Lancer la chasse
             </Button>
           ) : (
-            <HomeButtons tabsOpeningFunction={this.tabsOpeningSystem} />
+            !this.state.adresseOpen &&
+            (!this.state.myCandiesOpen && (
+              <HomeButtons tabsOpeningFunction={this.tabsOpeningSystem} />
+            ))
           )}
           {this.state.adresseOpen && (
-            <AdressesListing adressesList={this.state.adresses.data.features} />
+            <AdressesListing
+              backButton={this.backButton}
+              selectCandy={this.selectCandy}
+              adressesList={this.state.adressesAndCandies}
+            />
           )}
           {this.state.myCandiesOpen && (
-            <CandiesList candies={this.state.candiesList.data.products[0]} />
+            <CandiesList
+              backButton={this.backButton}
+              myCandies={this.state.myCandies}
+            />
           )}
         </Container>
 
