@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import getRandomNumber from "./getRandomNumber";
 
 class App extends Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class App extends Component {
     this.state = {
       adresses: [],
       candiesList: [],
+      adressesAndCandies: [],
       myCandies: []
     };
   }
@@ -19,7 +21,7 @@ class App extends Component {
 
   callApiAdresses() {
     fetch(
-      `https://api-adresse.data.gouv.fr/search/?q=Reims&type=street&postcode=51100&limit=20`
+      `https://api-adresse.data.gouv.fr/search/?q=Reims&type=street&postcode=51100&lat=49.257087&lon=4.019713&limit=20`
     )
       .then(results => results.json()) // conversion du résultat en JSON
       .then(data => {
