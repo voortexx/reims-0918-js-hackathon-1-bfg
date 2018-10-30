@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Adresses from "./Adresses";
 import getRandomNumber from "./getRandomNumber";
 import CandiesList from "./CandiesList";
+import HuntModal from "./HuntModal";
 import AdressesListing from "./AdressesListing";
 
 import "./App.css";
@@ -118,7 +119,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App font">
         <Header />
         <Container fluid>
           {!this.state.huntingOpen ? (
@@ -149,7 +150,6 @@ class App extends Component {
             />
           )}
         </Container>
-
         <Footer />
       </div>
     );
