@@ -1,12 +1,34 @@
 import React from "react";
+import {
+  Card,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Col,
+  Row
+} from "reactstrap";
 
 const Adresses = props => {
   return (
     <div>
-      <p>{props.adresseInfos.properties.label}</p>
-      <p>{props.adresseInfos.properties.name}</p>
-      <p>{props.adresseInfos.properties.postcode}</p>
-      <p>{props.adresseInfos.properties.city}</p>
+      <Card style={{ width: "450px", margin: "10px" }}>
+        <CardBody>
+          <Row>
+            <Col xs="2">
+              <CardTitle>{props.adresseInfos.houseNumber}</CardTitle>
+            </Col>
+            <Col xs="5">
+              <CardSubtitle>{props.adresseInfos.properties.name}</CardSubtitle>
+
+              <CardText>
+                {props.adresseInfos.properties.postcode}{" "}
+                {props.adresseInfos.properties.city}
+              </CardText>
+            </Col>
+          </Row>
+        </CardBody>
+      </Card>
     </div>
   );
 };
