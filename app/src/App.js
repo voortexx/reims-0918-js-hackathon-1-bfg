@@ -83,7 +83,7 @@ class App extends Component {
             <HomeButtons />
           )}
         </Container>
-        {this.state.candiesList.data !== undefined && (
+        {this.state.huntingOpen && (
           <CandiesList candies={this.state.candiesList.data.products[0]} />
         )}
         <Footer />
