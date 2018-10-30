@@ -4,7 +4,7 @@ import { Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap";
 const CandiesList = ({ candies }) => {
   return (
     <div>
-      <Card className="shadow">
+      <Card className="CardList">
         <CardImg src={candies.image_url} alt="Card image cap" />
         <CardBody>
           <CardTitle>{candies.product_name}</CardTitle>

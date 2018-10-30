@@ -31,14 +31,14 @@
   }
 }
 
-.card {
+.cardList {
   width: 15%;
   margin: 30px;
 
   transition: 0.3s;
 }
 
-.card:hover {
+.cardList:hover {
   width: 16%;
   box-shadow: 0 8px 20px black, 0 8px 20px black;
 }
