@@ -8,6 +8,7 @@ import Adresses from "./Adresses";
 import getRandomNumber from "./getRandomNumber";
 import CandiesList from "./CandiesList";
 import HuntModal from "./HuntModal";
+import AdressesListing from "./AdressesListing";
 
 import "./App.css";
 
@@ -19,8 +20,11 @@ class App extends Component {
       candiesList: [],
       adressesAndCandies: [],
       myCandies: [],
-      huntingOpen: false
+      huntingOpen: false,
+      adresseOpen: false,
+      myCandiesOpen: false
     };
+    this.tabsOpeningSystem = this.tabsOpeningSystem.bind(this);
   }
 
   componentDidMount() {
@@ -75,6 +79,18 @@ class App extends Component {
     });
   }
 
+  tabsOpeningSystem(tabName) {
+    tabName === "adresse"
+      ? this.setState({
+          adresseOpen: true,
+          myCandiesOpen: false
+        })
+      : this.setState({
+          adresseOpen: false,
+          myCandiesOpen: true
+        });
+  }
+
   render() {
     return (
       <div className="App">
@@ -85,15 +101,15 @@ class App extends Component {
               Lancer la chasse
             </Button>
           ) : (
-            <HomeButtons />
+            <HomeButtons tabsOpeningFunction={this.tabsOpeningSystem} />
+          )}
+          {this.state.adresseOpen && (
+            <AdressesListing adressesList={this.state.adresses.data.features} />
+          )}
+          {this.state.myCandiesOpen && (
+            <CandiesList candies={this.state.candiesList.data.products[0]} />
           )}
         </Container>
-        {this.state.huntingOpen && (
-          <Adresses adresse={this.state.adresses.data.features[1]} />
-        )}{" "}
-        {this.state.huntingOpen && (
-          <CandiesList candies={this.state.candiesList.data.products[0]} />
-        )}
         <Footer />
       </div>
     );

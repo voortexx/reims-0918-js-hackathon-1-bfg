@@ -8,29 +8,25 @@ import {
   CardSubtitle,
   Col,
   Row,
-  Button,
-  ButtonDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  Button
 } from "reactstrap";
 import HuntModal from "./HuntModal";
 
 const Adresses = props => {
   return (
-    <div>
-      <Card style={{ width: "450px", margin: "10px" }}>
+    <Col xs="4" className="mb-3">
+      <Card>
         <CardBody>
           <Row>
-            <Col xs="2">
-              <CardTitle>{props.adresse.houseNumber}</CardTitle>
+            <Col xs="4">
+              <CardTitle>{props.adresseInfos.houseNumber}</CardTitle>
             </Col>
-            <Col xs="5">
-              <CardSubtitle>{props.adresse.properties.name}</CardSubtitle>
+            <Col xs="8">
+              <CardSubtitle>{props.adresseInfos.properties.name}</CardSubtitle>
 
               <CardText>
-                {props.adresse.properties.postcode}{" "}
-                {props.adresse.properties.city}
+                {props.adresseInfos.properties.postcode}{" "}
+                {props.adresseInfos.properties.city}
               </CardText>
             </Col>
             <Col xs="5">
@@ -39,7 +35,7 @@ const Adresses = props => {
           </Row>
         </CardBody>
       </Card>
-    </div>
+    </Col>
   );
 };
 
