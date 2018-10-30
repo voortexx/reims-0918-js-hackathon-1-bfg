@@ -108,7 +108,6 @@ class App extends Component {
   }
 
   backButton() {
-    console.log("test");
     this.setState({
       adresseOpen: false,
       myCandiesOpen: false
