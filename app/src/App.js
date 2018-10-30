@@ -29,16 +29,19 @@ class App extends Component {
 
   callApiAdresses() {
     for (let i = 0; i < 20; i++) {
-      let randomNumber = getRandomNumber(100);
-      console.log(randomNumber);
       fetch(
-        `https://api-adresse.data.gouv.fr/search/?q=${randomNumber}+Reims&postcode=51100&limit=20`
+        `https://api-adresse.data.gouv.fr/search/?q=Reims&postcode=51100&limit=20`
       )
         .then(results => results.json()) // conversion du résultat en JSON
         .then(data => {
-          data.features.map(singleData => (singleData.candiesHouse = []));
+          data.features.map(
+            singleData => (
+              (singleData.candiesHouse = []),
+              (singleData.houseNumber = getRandomNumber(250))
+            )
+          );
           this.setState({
-            adresses: { data }
+            adresses: { ...data }
           });
         });
     }
