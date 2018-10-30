@@ -6,7 +6,12 @@ import {
   CardTitle,
   CardSubtitle,
   Col,
-  Row
+  Row,
+  Button,
+  ButtonDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem
 } from "reactstrap";
 
 const Adresses = props => {
@@ -25,6 +30,9 @@ const Adresses = props => {
                 {props.adresse.properties.postcode}{" "}
                 {props.adresse.properties.city}
               </CardText>
+            </Col>
+            <Col xs="5">
+              <Button style={{ width: "100px" }}>Visit It !</Button>
             </Col>
           </Row>
         </CardBody>
