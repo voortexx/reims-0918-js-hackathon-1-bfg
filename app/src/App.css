@@ -83,9 +83,16 @@
   margin-left: 102px;
   font-size: 1.8rem;
 }
+
 .letter {
-  animation: up 3s infinite linear;
+  animation: up 2s infinite linear;
+
 }
+
+.nbrecandy {
+  
+}
+
 
 @keyframes up {
   0% {

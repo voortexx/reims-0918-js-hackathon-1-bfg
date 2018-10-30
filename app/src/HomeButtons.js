@@ -39,8 +39,10 @@ const HomeButtons = props => {
               <span class="letter">r</span>
               <span class="letter">y</span>
             </div>
+            
           </div>
         </div>
+        <span class="nbrecandy">{props.myCandies.length}</span>
       </Button>
     </Row>
   );

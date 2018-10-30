@@ -127,7 +127,8 @@ class App extends Component {
           ) : (
             !this.state.adresseOpen &&
             (!this.state.myCandiesOpen && (
-              <HomeButtons tabsOpeningFunction={this.tabsOpeningSystem} />
+              <HomeButtons tabsOpeningFunction={this.tabsOpeningSystem} 
+              myCandies={this.state.myCandies}/>
             ))
           )}
           {this.state.adresseOpen && (
