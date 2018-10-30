@@ -31,9 +31,85 @@
   }
 }
 
+.card {
+  width: 15%;
+  margin: 30px;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  width: 16%;
+  box-shadow: 0 8px 20px black, 0 8px 20px black;
+}
+
 .btn-primary {
   width: 350px;
   height: 350px;
   justify-content: space-between;
   margin: 100px;
+}
+
+#glitches {
+  position: relative;
+}
+
+#main {
+  color: white;
+  animation: fade 3s infinite;
+  font-size: 1.8rem;
+}
+
+#main2 {
+  color: white;
+  animation: fade 3s infinite;
+  font-size: 1.8rem;
+}
+
+#letters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  color: white;
+  filter: blur(1.5px);
+  margin-left: 102px;
+  font-size: 1.8rem;
+}
+.letter {
+  animation: up 3s infinite linear;
+}
+
+@keyframes up {
+  0% {
+    transform: translate(0, 0) skew(0);
+  }
+  20% {
+    transform: translate(0, -40%) skew(-12deg);
+  }
+  40% {
+    transform: translate(0, -80%) skew(12deg);
+  }
+  60% {
+    transform: translate(0, -120%) skew(-7deg);
+  }
+  80% {
+    transform: translate(0, -160%) skew(4deg);
+  }
+  100% {
+    transform: translate(0, -200%) skew(0);
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
