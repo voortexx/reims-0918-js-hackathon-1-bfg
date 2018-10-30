@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container } from "reactstrap";
+import { Container, Button } from "reactstrap";
 
 import HomeButtons from "./HomeButtons";
 import Header from "./Header";
@@ -15,7 +15,8 @@ class App extends Component {
       adresses: [],
       candiesList: [],
       adressesAndCandies: [],
-      myCandies: []
+      myCandies: [],
+      huntingOpen: false
     };
   }
 
@@ -30,7 +31,7 @@ class App extends Component {
     )
       .then(results => results.json()) // conversion du résultat en JSON
       .then(data => {
-        data.used = false;
+        data.features.map(singleData => (singleData.candiesHouse = []));
         this.setState({
           adresses: { data }
         });
@@ -41,11 +42,27 @@ class App extends Component {
     fetch(`https://fr-en.openfoodfacts.org/category/candies.json`)
       .then(results => results.json()) // conversion du résultat en JSON
       .then(data => {
-        data.used = false;
         this.setState({
           candiesList: { data }
         });
       });
+  }
+
+  candiesAttribution() {
+    const listAdresses = this.state.adresses.data.features;
+    listAdresses.map(oneAdress => {
+      const candiesHouse = [];
+      for (let j = 5; j > 0; j--) {
+        const randomN = getRandomNumber(20);
+        let oneCandy = this.state.candiesList.data.products[randomN];
+        candiesHouse.push({ ...oneCandy });
+      }
+      oneAdress.candiesHouse = candiesHouse;
+    });
+    this.setState({
+      huntingOpen: true,
+      adressesAndCandies: listAdresses
+    });
   }
 
   render() {
@@ -53,7 +70,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <Container>
-          <HomeButtons />
+          {!this.state.huntingOpen ? (
+            <Button onClick={() => this.candiesAttribution()}>
+              Lancer la chasse
+            </Button>
+          ) : (
+            <HomeButtons />
+          )}
         </Container>
 
         <Footer />
