@@ -44,7 +44,7 @@ const HomeButtons = props => {
             </div>
           </div>
         </div>
-        <span class="nbrecandy">{props.myCandies.length}</span>
+        <span className="nbrecandy">{props.myCandies.length}</span>
       </Button>
     </Row>
   );

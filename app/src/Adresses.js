@@ -1,6 +1,5 @@
 import React from "react";
 
-import oneCandy from "./OneCandy";
 import {
   Card,
   CardDeck,
@@ -75,8 +74,8 @@ class Adresses extends React.Component {
             </ModalHeader>
             <ModalBody>
               <CardDeck>
-                {this.props.adresseInfos.candiesHouse.map(oneCandy => (
-                  <Col xs="6" key={oneCandy.id}>
+                {this.props.adresseInfos.candiesHouse.map((oneCandy, id) => (
+                  <Col xs="6" key={id}>
                     <Card>
                       <CardImg
                         top
