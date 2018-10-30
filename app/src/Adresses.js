@@ -1,4 +1,5 @@
 import React from "react";
+import Huntmodal from "./HuntModal";
 import {
   Card,
   CardText,
@@ -13,6 +14,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import HuntModal from "./HuntModal";
 
 const Adresses = props => {
   return (
@@ -32,7 +34,7 @@ const Adresses = props => {
               </CardText>
             </Col>
             <Col xs="5">
-              <Button style={{ width: "100px" }}>Visit It !</Button>
+              <HuntModal classname="" />
             </Col>
           </Row>
         </CardBody>

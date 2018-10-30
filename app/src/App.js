@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Adresses from "./Adresses";
 import getRandomNumber from "./getRandomNumber";
 import CandiesList from "./CandiesList";
+import HuntModal from "./HuntModal";
 
 import "./App.css";
 
@@ -89,7 +90,7 @@ class App extends Component {
         </Container>
         {this.state.huntingOpen && (
           <Adresses adresse={this.state.adresses.data.features[1]} />
-        )}
+        )}{" "}
         {this.state.huntingOpen && (
           <CandiesList candies={this.state.candiesList.data.products[0]} />
         )}
