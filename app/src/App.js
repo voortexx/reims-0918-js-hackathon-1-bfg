@@ -5,6 +5,7 @@ import HomeButtons from "./HomeButtons";
 import Header from "./Header";
 import Footer from "./Footer";
 import getRandomNumber from "./getRandomNumber";
+import CandiesList from "./CandiesList";
 
 import "./App.css";
 
@@ -55,7 +56,9 @@ class App extends Component {
         <Container>
           <HomeButtons />
         </Container>
-
+        {this.state.candiesList.data !== undefined && (
+          <CandiesList candies={this.state.candiesList.data.products[0]} />
+        )}
         <Footer />
       </div>
     );
