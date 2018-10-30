@@ -2,9 +2,7 @@ import React from "react";
 
 const Header = () => (
   <header>
-    <p className="text-center">
-      <h1>Treat or Coding !</h1>
-    </p>
+    <h1 className="text-center">Treat or Coding !</h1>
   </header>
 );
 

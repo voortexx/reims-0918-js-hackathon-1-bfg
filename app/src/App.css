@@ -32,5 +32,8 @@
 }
 
 .btn-primary {
-  
+  width: 350px;
+  height: 350px;
+  justify-content: space-between;
+  margin: 100px;
 }
