@@ -30,6 +30,13 @@ const Adresses = props => {
             <Col xs="5">
               <Button style={{ width: "100px" }}>Visit It !</Button>
             </Col>
+            <Button
+              onClick={() =>
+                props.selectCandy(props.adresseInfos.candiesHouse[0].id)
+              }
+            >
+              {props.adresseInfos.candiesHouse[0].product_name}
+            </Button>
           </Row>
         </CardBody>
       </Card>
