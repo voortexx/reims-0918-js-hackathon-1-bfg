@@ -37,11 +37,11 @@ class App extends Component {
           data.features.map(
             singleData => (
               (singleData.candiesHouse = []),
-              (singleData.houseNumber = getRandomNumber(250))
+              (singleData.houseNumber = getRandomNumber(100))
             )
           );
           this.setState({
-            adresses: { ...data }
+            adresses: { data }
           });
         });
     }
