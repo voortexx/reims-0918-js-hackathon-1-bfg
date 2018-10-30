@@ -1,17 +1,17 @@
 import React from "react";
-import { Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap";
+import { CardDeck, Button } from "reactstrap";
+import OneCandy from "./OneCandy";
 
-const CandiesList = ({ candies }) => {
+const CandiesList = ({ myCandies, backButton }) => {
   return (
-    <div>
-      <Card className="CardList">
-        <CardImg src={candies.image_url} alt="Card image cap" />
-        <CardBody>
-          <CardTitle>{candies.product_name}</CardTitle>
-          <CardText>{candies.brands}</CardText>
-        </CardBody>
-      </Card>
-    </div>
+    <React.Fragment>
+      <Button onClick={() => backButton()}>Retour</Button>
+      <CardDeck>
+        {myCandies.map(oneCandy => (
+          <OneCandy oneCandy={oneCandy} />
+        ))}
+      </CardDeck>
+    </React.Fragment>
   );
 };
 

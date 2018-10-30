@@ -33,6 +33,9 @@
 
 .cardList {
   width: 15%;
+}
+
+  .card {
   margin: 30px;
 
   transition: 0.3s;
@@ -41,6 +44,10 @@
 .cardList:hover {
   width: 16%;
   box-shadow: 0 8px 20px black, 0 8px 20px black;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary {
