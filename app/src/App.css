@@ -252,6 +252,8 @@ h2 {
 .modal-content {
   background-color: #161e51 !important;
   border: 1px solid #a2ff21 !important;
+  background: url("img/toile.png");
+  background-size: cover;
 }
 
 .modal-content .card {
@@ -266,7 +268,7 @@ h2 {
   text-transform: uppercase;
   border: 1px solid #a2ff21;
   font-weight: bold;
-  background-color: #7ac216;
+  background-color: #8bbf42;
 }
 
 .modal-content .card .btn-secondary:hover {

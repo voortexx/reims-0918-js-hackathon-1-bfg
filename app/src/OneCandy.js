@@ -13,7 +13,7 @@ const OneCandy = props => {
             alt="Card image cap"
           />
         ) : (
-          <i className="fas fa-ghost" />
+          <i className="fas fa-ghost fa-3x pt-4" />
         )}
         <CardBody>
           <CardTitle>{props.oneCandy.product_name}</CardTitle>
