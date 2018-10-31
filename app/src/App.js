@@ -5,7 +5,7 @@ import HomeButtons from "./HomeButtons";
 import Header from "./Header";
 import Footer from "./Footer";
 import getRandomNumber from "./getRandomNumber";
-import CandiesList from "./CandiesList";
+import FullInventory from "./FullInventory";
 import AdressesListing from "./AdressesListing";
 
 import "./App.css";
@@ -20,11 +20,13 @@ class App extends Component {
       myCandies: [],
       huntingOpen: false,
       adresseOpen: false,
-      myCandiesOpen: false
+      myCandiesOpen: false,
+      fullBag: []
     };
     this.tabsOpeningSystem = this.tabsOpeningSystem.bind(this);
     this.selectCandy = this.selectCandy.bind(this);
     this.backButton = this.backButton.bind(this);
+    this.keepMyBag = this.keepMyBag.bind(this);
   }
 
   componentDidMount() {
@@ -98,12 +100,9 @@ class App extends Component {
   selectCandy(id) {
     let newCandy = this.state.candiesList.data.products.find(product => {
       if (product.id === id) {
-        console.log(product.id);
         return product;
       }
     });
-    console.log(id);
-    console.log(newCandy);
     this.setState({
       myCandies: [...this.state.myCandies, newCandy]
     });
@@ -113,6 +112,15 @@ class App extends Component {
     this.setState({
       adresseOpen: false,
       myCandiesOpen: false
+    });
+  }
+
+  keepMyBag() {
+    let newBag = this.state.myCandies;
+    this.setState({
+      adresseOpen: false,
+      myCandies: [],
+      fullBag: [...this.state.fullBag, newBag]
     });
   }
 
@@ -143,12 +151,13 @@ class App extends Component {
               selectCandy={this.selectCandy}
               adressesList={this.state.adressesAndCandies}
               myCandies={this.state.myCandies}
+              keepMyBag={this.keepMyBag}
             />
           )}
           {this.state.myCandiesOpen && (
-            <CandiesList
+            <FullInventory
+              fullBag={this.state.fullBag}
               backButton={this.backButton}
-              myCandies={this.state.myCandies}
             />
           )}
         </Container>

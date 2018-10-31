@@ -21,7 +21,7 @@ const AdressesListing = props => (
         </CardDeck>
       </Col>
       <Col xs="2">
-        <CandiesList myCandies={props.myCandies} />
+        <CandiesList keepMyBag={props.keepMyBag} myCandies={props.myCandies} />
       </Col>
     </Row>
   </div>

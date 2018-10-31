@@ -96,7 +96,7 @@ class Adresses extends React.Component {
                             this.toggle();
                           }}
                         >
-                          Choisir ce bonbon
+                          Choose this Candy
                         </Button>
                       </CardBody>
                     </Card>
