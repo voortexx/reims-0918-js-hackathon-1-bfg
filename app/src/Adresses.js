@@ -68,10 +68,11 @@ class Adresses extends React.Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            <ModalHeader toggle={this.toggle}>
+            <ModalHeader toggle={this.toggle} className="font">
+              {this.props.adresseInfos.houseNumber}{" "}
               {this.props.adresseInfos.properties.label}
             </ModalHeader>
-            <ModalBody>
+            <ModalBody className="font">
               <CardDeck>
                 {this.props.adresseInfos.candiesHouse.map((oneCandy, id) => (
                   <Col xs="6" key={id}>
@@ -92,9 +93,7 @@ class Adresses extends React.Component {
                         </CardTitle>
                         <Button
                           onClick={() => {
-                            this.props.selectCandy(
-                              this.props.adresseInfos.candiesHouse[0].id
-                            );
+                            this.props.selectCandy(oneCandy.id);
 
                             this.toggle();
                           }}
@@ -108,7 +107,7 @@ class Adresses extends React.Component {
               </CardDeck>
             </ModalBody>
             <ModalFooter>
-              <Button color="secondary" onClick={this.toggle}>
+              <Button className="font" color="secondary" onClick={this.toggle}>
                 Fermer
               </Button>
             </ModalFooter>

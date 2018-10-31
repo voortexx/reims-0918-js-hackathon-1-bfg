@@ -53,6 +53,10 @@
 .font {
   font-family: "Creepster", cursive;
 }
+
+h5 {
+  font-family: "Creepster", cursive;
+}
 .btn-primary {
   width: 350px;
   height: 350px;
@@ -131,4 +135,13 @@
   100% {
     opacity: 0;
   }
+}
+
+header h1 {
+  font-size: 10rem;
+  padding-top: 110px;
+}
+
+body {
+  background-image: url("/img/bg.jpg") cover;
 }

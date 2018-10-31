@@ -64,7 +64,7 @@ class App extends Component {
 
   candiesAttribution() {
     const listAdresses = this.state.adresses.data.features;
-    listAdresses.map(oneAdress => {
+    const adressesAndCandies = listAdresses.map(oneAdress => {
       const listNumberRandom = [];
       const candiesHouse = [];
       for (let j = 5; j > 0; j--) {
@@ -75,11 +75,11 @@ class App extends Component {
           candiesHouse.push({ ...oneCandy });
         } else j++;
       }
-      oneAdress.candiesHouse = candiesHouse;
+      return { ...oneAdress, candiesHouse };
     });
     this.setState({
       huntingOpen: true,
-      adressesAndCandies: listAdresses
+      adressesAndCandies
     });
   }
 
@@ -96,15 +96,16 @@ class App extends Component {
   }
 
   selectCandy(id) {
-    let myCandies = this.state.myCandies;
-    let newCandy = this.state.candiesList.data.products.filter(product => {
+    let newCandy = this.state.candiesList.data.products.find(product => {
       if (product.id === id) {
+        console.log(product.id);
         return product;
       }
     });
-    myCandies.push(newCandy);
+    console.log(id);
+    console.log(newCandy);
     this.setState({
-      myCandies: myCandies
+      myCandies: [...this.state.myCandies, newCandy]
     });
   }
 

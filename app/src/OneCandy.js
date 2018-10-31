@@ -5,19 +5,19 @@ const OneCandy = props => {
   return (
     <div>
       <Card>
-        {props.oneCandy[0].image_url ? (
+        {props.oneCandy.image_url ? (
           <CardImg
             top
             width="30%"
-            src={props.oneCandy[0].image_url}
+            src={props.oneCandy.image_url}
             alt="Card image cap"
           />
         ) : (
-          <i class="fas fa-ghost" />
+          <i className="fas fa-ghost" />
         )}
         <CardBody>
-          <CardTitle>{props.oneCandy[0].product_name}</CardTitle>
-          <CardText>{props.oneCandy[0].brands}</CardText>
+          <CardTitle>{props.oneCandy.product_name}</CardTitle>
+          <CardText>{props.oneCandy.brands}</CardText>
         </CardBody>
       </Card>
     </div>

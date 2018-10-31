@@ -7,7 +7,7 @@ const CandiesList = ({ myCandies, backButton }) => {
     <React.Fragment>
       <CardDeck className="justify-content-center">
         {myCandies.map((oneCandy, index) => (
-          <OneCandy key={oneCandy[0].id + index} oneCandy={oneCandy} />
+          <OneCandy key={index} oneCandy={oneCandy} />
         ))}
       </CardDeck>
     </React.Fragment>
