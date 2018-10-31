@@ -1,10 +1,6 @@
 import React from "react";
 import Adresses from "./Adresses";
-<<<<<<< HEAD
-import CandiesList from "./CandiesList"
-=======
 import CandiesList from "./CandiesList";
->>>>>>> 463414fdb7f5ebfed88a62bf82f917c809ea7c9a
 import { CardDeck, Button, Col, Row } from "reactstrap";
 
 const AdressesListing = props => (

@@ -1,8 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
-=======
-
->>>>>>> 463414fdb7f5ebfed88a62bf82f917c809ea7c9a
 import {
   Card,
   CardDeck,

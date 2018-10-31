@@ -75,6 +75,13 @@
   color: white;
   animation: fade 3s infinite;
   font-size: 1.8rem;
+  margin-left: 20px;
+}
+
+.nbrecandy {
+  color: white;
+  animation: fade 3s infinite;
+  font-size: 1.8rem;
 }
 
 #letters {
@@ -84,15 +91,12 @@
   display: flex;
   color: white;
   filter: blur(1.5px);
-  margin-left: 102px;
+  margin-left: 115px;
   font-size: 1.8rem;
 }
 
 .letter {
-  animation: up 2s infinite linear;
-}
-
-.nbrecandy {
+  animation: up 3s infinite linear;
 }
 
 @keyframes up {
