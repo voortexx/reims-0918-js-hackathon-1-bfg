@@ -122,7 +122,10 @@ class App extends Component {
         <Header />
         <Container fluid>
           {!this.state.huntingOpen ? (
-            <Button onClick={() => this.candiesAttribution()}>
+            <Button
+              className="chasseinit"
+              onClick={() => this.candiesAttribution()}
+            >
               Lancer la chasse
             </Button>
           ) : (
