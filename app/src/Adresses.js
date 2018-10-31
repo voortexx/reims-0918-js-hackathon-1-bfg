@@ -1,6 +1,4 @@
 import React from "react";
-
-import oneCandy from "./OneCandy";
 import {
   Card,
   CardDeck,
@@ -70,13 +68,14 @@ class Adresses extends React.Component {
             toggle={this.toggle}
             className={this.props.className}
           >
-            <ModalHeader toggle={this.toggle}>
+            <ModalHeader toggle={this.toggle} className="font">
+              {this.props.adresseInfos.houseNumber}{" "}
               {this.props.adresseInfos.properties.label}
             </ModalHeader>
-            <ModalBody>
+            <ModalBody className="font">
               <CardDeck>
-                {this.props.adresseInfos.candiesHouse.map(oneCandy => (
-                  <Col xs="6" key={oneCandy.id}>
+                {this.props.adresseInfos.candiesHouse.map((oneCandy, id) => (
+                  <Col xs="6" key={id}>
                     <Card>
                       {oneCandy.image_url ? (
                         <CardImg
@@ -108,7 +107,7 @@ class Adresses extends React.Component {
               </CardDeck>
             </ModalBody>
             <ModalFooter>
-              <Button color="secondary" onClick={this.toggle}>
+              <Button className="font" color="secondary" onClick={this.toggle}>
                 Fermer
               </Button>
             </ModalFooter>

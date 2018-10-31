@@ -4,10 +4,8 @@ import { Container, Button } from "reactstrap";
 import HomeButtons from "./HomeButtons";
 import Header from "./Header";
 import Footer from "./Footer";
-import Adresses from "./Adresses";
 import getRandomNumber from "./getRandomNumber";
 import CandiesList from "./CandiesList";
-import HuntModal from "./HuntModal";
 import AdressesListing from "./AdressesListing";
 
 import "./App.css";

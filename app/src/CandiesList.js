@@ -1,5 +1,5 @@
 import React from "react";
-import { CardDeck, Button } from "reactstrap";
+import { CardDeck } from "reactstrap";
 import OneCandy from "./OneCandy";
 
 const CandiesList = ({ myCandies }) => {
