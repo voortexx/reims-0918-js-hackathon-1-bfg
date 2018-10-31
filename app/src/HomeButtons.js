@@ -30,7 +30,7 @@ const HomeButtons = props => {
       >
         <div id="word">
           <div id="glitches">
-            <span id="main">Inventory</span>
+            <span id="main2">Inventory</span>
             <div id="letters">
               <span className="letter">I</span>
               <span className="letter">n</span>
