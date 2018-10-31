@@ -6,8 +6,13 @@ const Header = () => (
     <header className="hero">
       <div className="hero_bg" />
       <div className="hero_fg" />
-      <h1 className="text-center">
+      <h1 className="title text-center">
         Treat <span>or</span> Coding!
+        <span class="drop" />
+        <span class="drop" />
+        <span class="drop" />
+        <span class="drop" />
+        <span class="drop" />
       </h1>
     </header>
     <svg className="visually-hidden">
