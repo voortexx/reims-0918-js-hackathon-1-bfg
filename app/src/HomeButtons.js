@@ -3,8 +3,9 @@ import { Button, Row } from "reactstrap";
 
 const HomeButtons = props => {
   return (
-    <Row className="justify-content-center">
+    <Row className="homenav justify-content-center">
       <Button
+        className="mt-2"
         onClick={() => props.tabsOpeningFunction("adresse")}
         color="primary"
       >
@@ -25,6 +26,7 @@ const HomeButtons = props => {
         </div>
       </Button>
       <Button
+        className="m-2"
         onClick={() => props.tabsOpeningFunction("inventaire")}
         color="primary"
       >

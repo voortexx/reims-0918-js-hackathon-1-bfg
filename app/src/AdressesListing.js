@@ -5,7 +5,9 @@ import { CardDeck, Button, Col, Row } from "reactstrap";
 
 const AdressesListing = props => (
   <div>
-    <Button onClick={() => props.backButton()}>Retour</Button>
+    <Button className="chasseinit" onClick={() => props.backButton()}>
+      Retour
+    </Button>
     <Row>
       <Col xs="10">
         <CardDeck>

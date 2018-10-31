@@ -29,8 +29,8 @@ const Header = () => (
           y2="100%"
           spreadMethod="pad"
         >
-          <stop offset="0%" stop-color="#00cc00" stop-opacity="1" />
-          <stop offset="100%" stop-color="#006600" stop-opacity="1" />
+          <stop offset="0%" stopColor="#00cc00" stopOpacity="1" />
+          <stop offset="100%" stopColor="#006600" stopOpacity="1" />
           <animate
             values="0% 25% 0%;"
             dur="2s"
