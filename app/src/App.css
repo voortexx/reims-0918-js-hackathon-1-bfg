@@ -61,10 +61,20 @@ h5 {
 .footer {
   position: fixed;
   bottom: 0;
-  height: 35px;
+  height: 25px;
+  padding-top: 1px;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer a,
+.footer a:active,
+.footer a:hover {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 0;
 }
 
 .posiiton {
@@ -155,8 +165,11 @@ h5 {
 header h1 {
   font-size: 10rem;
   padding-top: 110px;
-  color: #8bbf42;
+  color: #fff;
   text-shadow: 2px 2px 10px #0000007a;
+  background: -webkit-linear-gradient(#81c55a, #93ff54, #54ca04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 body {
@@ -178,7 +191,6 @@ body {
   box-shadow: 0px 0px 50px #a2ff21;
   color: #8bbf42;
   border: 1px solid #a2ff21;
-  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .homenave .btn,
@@ -190,13 +202,40 @@ body {
 
 .homenav .btn-primary:hover,
 .homenav .btn-primary:active {
-  box-shadow: 0px 0px 50px #a2ff21;
+  box-shadow: 0px 0px 100px #a2ff21;
   color: #8bbf42;
   border: 1px solid #a2ff21 !important;
-  background-color: rgba(255, 255, 255, 0.7) !important;
+  background-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .homenav .btn-primary:hover .letter,
 .homenav .btn-primary:active .letter {
   color: #8bbf42;
+}
+
+.oneAdress.card {
+  color: #fff;
+  background: url("img/toile.png");
+  background-size: cover;
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.oneAdress.card .btn {
+  background-color: #8bbf42;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.oneAdress.card h5.already {
+  color: #8bbf42;
+}
+
+h2 {
+  color: #fff;
+  text-shadow: 2px 2px 10px #0000007a;
+  background: -webkit-linear-gradient(#81c55a, #93ff54, #54ca04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
