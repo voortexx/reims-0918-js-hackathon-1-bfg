@@ -6,7 +6,7 @@ const Header = () => (
     <header className="hero">
       <div className="hero_bg" />
       <div className="hero_fg" />
-      <h1 className="text-center">Treat or Coding !</h1>
+      <h1 className="text-center">Treat or Coding!</h1>
     </header>
     <svg className="visually-hidden">
       <defs>

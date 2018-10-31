@@ -24,7 +24,8 @@ class App extends Component {
       myCandiesOpen: false,
       fullBag: [],
       witchPower: 0,
-      witchCall: false
+      witchCall: false,
+      playerName: "Fabien"
     };
     this.tabsOpeningSystem = this.tabsOpeningSystem.bind(this);
     this.selectCandy = this.selectCandy.bind(this);
@@ -111,13 +112,13 @@ class App extends Component {
       myCandies: [...this.state.myCandies, newCandy],
       witchPower: this.state.witchPower + 1
     });
-    this.witchCall();
   }
 
   backButton() {
     this.setState({
       adresseOpen: false,
-      myCandiesOpen: false
+      myCandiesOpen: false,
+      witchCall: false
     });
   }
 
@@ -145,6 +146,12 @@ class App extends Component {
     }
   }
 
+  handleChangePlayerName(e) {
+    this.setState({
+      playerName: e.target.value
+    });
+  }
+
   render() {
     return (
       <div className="App font">
@@ -152,12 +159,22 @@ class App extends Component {
         <Container fluid>
           {!this.state.witchCall ? (
             !this.state.huntingOpen ? (
-              <Button
-                className="chasseinit"
-                onClick={() => this.candiesAttribution()}
-              >
-                Let's Hunt
-              </Button>
+              <Fragment>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    onChange={e => this.handleChangePlayerName(e)}
+                    value={this.state.playerName}
+                  />
+                </div>
+                <br />
+                <Button
+                  className="chasseinit"
+                  onClick={() => this.candiesAttribution()}
+                >
+                  Let's Hunt
+                </Button>
+              </Fragment>
             ) : (
               !this.state.adresseOpen &&
               (!this.state.myCandiesOpen && (
@@ -176,12 +193,14 @@ class App extends Component {
                 className="chasseinit mt-3"
                 onClick={() => this.backButton()}
               >
-                Back
+                Retry
               </Button>
             </Fragment>
           )}
           {this.state.adresseOpen && (
             <AdressesListing
+              witchCall={this.witchCall}
+              playerName={this.state.playerName}
               backButton={this.backButton}
               selectCandy={this.selectCandy}
               adressesList={this.state.adressesAndCandies}

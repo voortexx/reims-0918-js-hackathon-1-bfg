@@ -30,7 +30,9 @@ const CandiesList = ({ fullBag, backButton }) => {
           </div>
         ))
       ) : (
-        <h2 style={{ color: "#fff" }}>Your Inventory is Empty</h2>
+        <h2 className="mt-3" style={{ color: "#fff" }}>
+          Your Inventory is Empty
+        </h2>
       )}
     </React.Fragment>
   );

@@ -32,6 +32,7 @@ class Adresses extends React.Component {
       modal: !this.state.modal,
       visited: true
     });
+    this.props.witchCall();
   }
   render() {
     return (

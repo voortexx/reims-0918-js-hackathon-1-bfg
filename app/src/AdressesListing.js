@@ -8,6 +8,7 @@ const AdressesListing = props => (
     <Button className="chasseinit" onClick={() => props.backButton()}>
       Back
     </Button>
+    <h3 className="playerName">{props.playerName}, be aware of the witch!</h3>
     <Row>
       <Col xs="10">
         <CardDeck>
@@ -16,6 +17,7 @@ const AdressesListing = props => (
               key={oneAdress.properties.id}
               selectCandy={props.selectCandy}
               adresseInfos={oneAdress}
+              witchCall={props.witchCall}
             />
           ))}
         </CardDeck>
