@@ -57,6 +57,16 @@
 h5 {
   font-family: "Creepster", cursive;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 1.4rem;
+}
+
 .btn-primary {
   width: 350px;
   height: 350px;
