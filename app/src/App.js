@@ -64,7 +64,7 @@ class App extends Component {
 
   candiesAttribution() {
     const listAdresses = this.state.adresses.data.features;
-    const adressesAndCandies = listAdresses.map(oneAdress => {
+    listAdresses.map(oneAdress => {
       const listNumberRandom = [];
       const candiesHouse = [];
       for (let j = 5; j > 0; j--) {
@@ -75,11 +75,11 @@ class App extends Component {
           candiesHouse.push({ ...oneCandy });
         } else j++;
       }
-      return { ...oneAdress, candiesHouse };
+      oneAdress.candiesHouse = candiesHouse;
     });
     this.setState({
       huntingOpen: true,
-      adressesAndCandies
+      adressesAndCandies: listAdresses
     });
   }
 
@@ -96,16 +96,15 @@ class App extends Component {
   }
 
   selectCandy(id) {
-    let newCandy = this.state.candiesList.data.products.find(product => {
+    let myCandies = this.state.myCandies;
+    let newCandy = this.state.candiesList.data.products.filter(product => {
       if (product.id === id) {
-        console.log(product.id);
         return product;
       }
     });
-    console.log(id);
-    console.log(newCandy);
+    myCandies.push(newCandy);
     this.setState({
-      myCandies: [...this.state.myCandies, newCandy]
+      myCandies: myCandies
     });
   }
 
@@ -122,10 +121,7 @@ class App extends Component {
         <Header />
         <Container fluid>
           {!this.state.huntingOpen ? (
-            <Button
-              className="chasseinit"
-              onClick={() => this.candiesAttribution()}
-            >
+            <Button onClick={() => this.candiesAttribution()}>
               Lancer la chasse
             </Button>
           ) : (
@@ -147,6 +143,7 @@ class App extends Component {
           )}
           {this.state.myCandiesOpen && (
             <CandiesList
+            
               backButton={this.backButton}
               myCandies={this.state.myCandies}
             />
