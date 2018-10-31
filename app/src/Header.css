@@ -29,7 +29,6 @@ a:focus {
 }
 
 .hero {
-  width: 100vw;
   height: 344px;
   position: relative;
   overflow: hidden;
