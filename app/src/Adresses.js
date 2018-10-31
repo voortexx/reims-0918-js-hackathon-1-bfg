@@ -94,9 +94,7 @@ class Adresses extends React.Component {
                         </CardTitle>
                         <Button
                           onClick={() => {
-                            this.props.selectCandy(
-                              this.props.adresseInfos.candiesHouse[0].id
-                            );
+                            this.props.selectCandy(oneCandy.id);
 
                             this.toggle();
                           }}
