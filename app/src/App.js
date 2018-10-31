@@ -169,7 +169,7 @@ class App extends Component {
                   />
                 </div>
                 <br />
-                {this.state.playerName.length > 3 && (
+                {this.state.playerName.length > 2 && (
                   <Button
                     className="chasseinit"
                     onClick={() => this.candiesAttribution()}
