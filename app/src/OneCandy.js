@@ -6,12 +6,15 @@ const OneCandy = props => {
     <div>
       <Card>
         {props.oneCandy.image_url ? (
-          <CardImg
-            height="150px"
-            top
-            src={props.oneCandy.image_url}
-            alt="Card image cap"
-          />
+          <div style={{ overflow: "hidden", maxHeight: "200px" }}>
+            <CardImg
+              className="img-fluid"
+              height="150px"
+              top
+              src={props.oneCandy.image_url}
+              alt="Card image cap"
+            />
+          </div>
         ) : (
           <i className="fas fa-ghost fa-3x pt-4" />
         )}
