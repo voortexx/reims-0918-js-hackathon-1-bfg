@@ -266,12 +266,13 @@ h2 {
   text-transform: uppercase;
   border: 1px solid #a2ff21;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #7ac216;
 }
 
 .modal-content .card .btn-secondary:hover {
   box-shadow: 0px 0px 50px #a2ff21;
   color: #8bbf42;
+  background-color: #fff;
   border: 1px solid #a2ff21;
 }
 
