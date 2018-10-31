@@ -1,8 +1,8 @@
 import React from "react";
-import { CardDeck } from "reactstrap";
+import { CardDeck, Button } from "reactstrap";
 import OneCandy from "./OneCandy";
 
-const CandiesList = ({ myCandies }) => {
+const CandiesList = ({ myCandies, backButton }) => {
   return (
     <React.Fragment>
       <CardDeck className="justify-content-center">
