@@ -152,7 +152,7 @@ class App extends Component {
             />
           )}
         </Container>
-        <footer className="footer col-4 offset-8">
+        <footer className="footer w-100">
           <Footer />
         </footer>
       </div>
