@@ -53,6 +53,10 @@
 .font {
   font-family: "Creepster", cursive;
 }
+
+h5 {
+  font-family: "Creepster", cursive;
+}
 .btn-primary {
   width: 350px;
   height: 350px;
