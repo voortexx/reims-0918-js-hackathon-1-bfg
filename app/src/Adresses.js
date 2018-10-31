@@ -36,7 +36,7 @@ class Adresses extends React.Component {
   render() {
     return (
       <Col xs="4" className="mb-3">
-        <Card>
+        <Card className="oneAdress">
           <CardBody>
             <Row>
               <Col xs="4">
@@ -58,7 +58,7 @@ class Adresses extends React.Component {
                     Visit It !
                   </Button>
                 ) : (
-                  <h5>Already Visit</h5>
+                  <h5 className="already">Already Visit</h5>
                 )}
               </Col>
             </Row>

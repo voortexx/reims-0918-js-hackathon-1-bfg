@@ -126,7 +126,7 @@ class App extends Component {
               className="chasseinit"
               onClick={() => this.candiesAttribution()}
             >
-              Lancer la chasse
+              Let's Hunt
             </Button>
           ) : (
             !this.state.adresseOpen &&

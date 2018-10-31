@@ -40,7 +40,7 @@ const HomeButtons = props => {
         />
         <div id="word">
           <div id="glitches">
-            <span id="main2">Inventory {props.myCandies.length}</span>
+            <span id="main2">Inventory - {props.myCandies.length}</span>
             <div id="letters">
               <span className="letter">I</span>
               <span className="letter">n</span>
