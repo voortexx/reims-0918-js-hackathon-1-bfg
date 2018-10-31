@@ -133,7 +133,7 @@ class App extends Component {
   }
 
   witchCall() {
-    const randomN = getRandomNumber(10);
+    const randomN = getRandomNumber(8);
     const witchPower = this.state.witchPower;
     const result = randomN - witchPower;
     if (result < 0) {
