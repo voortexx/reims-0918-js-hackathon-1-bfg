@@ -7,8 +7,8 @@ const OneCandy = props => {
       <Card>
         {props.oneCandy.image_url ? (
           <CardImg
+            height="150px"
             top
-            width="30%"
             src={props.oneCandy.image_url}
             alt="Card image cap"
           />
@@ -17,7 +17,6 @@ const OneCandy = props => {
         )}
         <CardBody>
           <CardTitle>{props.oneCandy.product_name}</CardTitle>
-          <CardText>{props.oneCandy.brands}</CardText>
         </CardBody>
       </Card>
     </div>
