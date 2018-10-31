@@ -137,7 +137,7 @@ class App extends Component {
   }
 
   witchCall() {
-    const randomN = getRandomNumber(8);
+    const randomN = getRandomNumber(12);
     const witchPower = this.state.witchPower;
     const result = randomN - witchPower;
     if (result < 0) {
@@ -157,9 +157,9 @@ class App extends Component {
   }
 
   onPressEnterNicknameChecked(event) {
-    console.log(event.charCode);
     if (event.charCode === 13 && this.state.playerName.length > 2) {
       this.setState({ huntingOpen: true });
+      this.candiesAttribution();
     }
   }
 
