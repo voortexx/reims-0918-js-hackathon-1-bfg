@@ -2,10 +2,8 @@ import React from "react";
 import {
   Card,
   CardDeck,
-  CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
   Col,
   Row,
   Button,

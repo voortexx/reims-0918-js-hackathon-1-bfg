@@ -1,19 +1,27 @@
 import React from "react";
 import "./Header.css";
+import { Spring } from "react-spring";
 
 const Header = () => (
   <div>
     <header className="hero">
       <div className="hero_bg" />
       <div className="hero_fg" />
-      <h1 className="title text-center">
-        Treat <span>or</span> Coding!
-        <span class="drop" />
-        <span class="drop" />
-        <span class="drop" />
-        <span class="drop" />
-        <span class="drop" />
-      </h1>
+      <Spring
+        from={{ opacity: 0, transform: "translate3d(0,-40px,0)" }}
+        to={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+      >
+        {props => (
+          <h1 style={props} className="title text-center">
+            Treat <span>or</span> Coding!
+            <span className="drop" />
+            <span className="drop" />
+            <span className="drop" />
+            <span className="drop" />
+            <span className="drop" />
+          </h1>
+        )}
+      </Spring>
     </header>
     <svg className="visually-hidden">
       <defs>

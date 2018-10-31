@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Container, Button, Row } from "reactstrap";
+import { Container, Button } from "reactstrap";
 
 import HomeButtons from "./HomeButtons";
 import Header from "./Header";
@@ -8,6 +8,7 @@ import getRandomNumber from "./getRandomNumber";
 import FullInventory from "./FullInventory";
 import AdressesListing from "./AdressesListing";
 import witch from "./img/witch.gif";
+import { Spring } from "react-spring";
 
 import "./App.css";
 
@@ -32,6 +33,9 @@ class App extends Component {
     this.backButton = this.backButton.bind(this);
     this.keepMyBag = this.keepMyBag.bind(this);
     this.witchCall = this.witchCall.bind(this);
+    this.onPressEnterNicknameChecked = this.onPressEnterNicknameChecked.bind(
+      this
+    );
   }
 
   componentDidMount() {
@@ -152,6 +156,13 @@ class App extends Component {
     });
   }
 
+  onPressEnterNicknameChecked(event) {
+    console.log(event.charCode);
+    if (event.charCode === 13 && this.state.playerName.length > 2) {
+      this.setState({ huntingOpen: true });
+    }
+  }
+
   render() {
     return (
       <div className="App font">
@@ -160,22 +171,40 @@ class App extends Component {
           {!this.state.witchCall ? (
             !this.state.huntingOpen ? (
               <Fragment>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    onChange={e => this.handleChangePlayerName(e)}
-                    value={this.state.playerName}
-                    placeholder="Your nickname"
-                  />
-                </div>
+                <Spring
+                  from={{ opacity: 0, transform: "translate3d(0,-40px,0)" }}
+                  to={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+                >
+                  {props => (
+                    <div style={props} className="form-group">
+                      <input
+                        type="text"
+                        onChange={e => this.handleChangePlayerName(e)}
+                        onKeyPress={event =>
+                          this.onPressEnterNicknameChecked(event)
+                        }
+                        value={this.state.playerName}
+                        placeholder="Your nickname"
+                      />
+                    </div>
+                  )}
+                </Spring>
                 <br />
                 {this.state.playerName.length > 2 && (
-                  <Button
-                    className="chasseinit"
-                    onClick={() => this.candiesAttribution()}
+                  <Spring
+                    from={{ opacity: 0, transform: "translate3d(-40px,0,0)" }}
+                    to={{ opacity: 1, transform: "translate3d(0,0,0)" }}
                   >
-                    Let's Hunt
-                  </Button>
+                    {props => (
+                      <Button
+                        style={props}
+                        className="chasseinit"
+                        onClick={() => this.candiesAttribution()}
+                      >
+                        Let's Hunt
+                      </Button>
+                    )}
+                  </Spring>
                 )}
               </Fragment>
             ) : (
