@@ -75,7 +75,7 @@ class App extends Component {
 
   candiesAttribution() {
     const listAdresses = this.state.adresses.data.features;
-    const adressesAndCandies = listAdresses.map(oneAdress => {
+    listAdresses.map(oneAdress => {
       const listNumberRandom = [];
       const candiesHouse = [];
       for (let j = 5; j > 0; j--) {
@@ -86,11 +86,11 @@ class App extends Component {
           candiesHouse.push({ ...oneCandy });
         } else j++;
       }
-      return { ...oneAdress, candiesHouse };
+      oneAdress.candiesHouse = candiesHouse;
     });
     this.setState({
       huntingOpen: true,
-      adressesAndCandies
+      adressesAndCandies: listAdresses
     });
   }
 
@@ -107,7 +107,8 @@ class App extends Component {
   }
 
   selectCandy(id) {
-    let newCandy = this.state.candiesList.data.products.find(product => {
+    let myCandies = this.state.myCandies;
+    let newCandy = this.state.candiesList.data.products.filter(product => {
       if (product.id === id) {
         return product;
       }
@@ -137,7 +138,7 @@ class App extends Component {
   }
 
   witchCall() {
-    const randomN = getRandomNumber(12);
+    const randomN = getRandomNumber(8);
     const witchPower = this.state.witchPower;
     const result = randomN - witchPower;
     if (result < 0) {
