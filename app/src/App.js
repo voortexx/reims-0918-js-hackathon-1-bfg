@@ -25,7 +25,7 @@ class App extends Component {
       fullBag: [],
       witchPower: 0,
       witchCall: false,
-      playerName: "Fabien"
+      playerName: ""
     };
     this.tabsOpeningSystem = this.tabsOpeningSystem.bind(this);
     this.selectCandy = this.selectCandy.bind(this);
@@ -165,15 +165,18 @@ class App extends Component {
                     type="text"
                     onChange={e => this.handleChangePlayerName(e)}
                     value={this.state.playerName}
+                    placeholder="Your nickname"
                   />
                 </div>
                 <br />
-                <Button
-                  className="chasseinit"
-                  onClick={() => this.candiesAttribution()}
-                >
-                  Let's Hunt
-                </Button>
+                {this.state.playerName.length > 3 && (
+                  <Button
+                    className="chasseinit"
+                    onClick={() => this.candiesAttribution()}
+                  >
+                    Let's Hunt
+                  </Button>
+                )}
               </Fragment>
             ) : (
               !this.state.adresseOpen &&

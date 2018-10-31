@@ -172,6 +172,10 @@ header h1 {
   -webkit-text-fill-color: transparent;
 }
 
+header h1 span {
+  font-size: 8rem;
+}
+
 .playerName {
   color: #fff;
   font-size: 3rem;
@@ -308,4 +312,12 @@ h2 {
 
 .form-group input:focus {
   background-color: rgba(255, 255, 255, 1);
+}
+
+::placeholder {
+  color: #282c34;
+}
+
+.form-group input:focus::placeholder {
+  color: #c1c5ce;
 }
