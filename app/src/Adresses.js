@@ -39,20 +39,18 @@ class Adresses extends React.Component {
         <Card>
           <CardBody>
             <Row>
-              <Col xs="4">
-                <CardTitle>{this.props.adresseInfos.houseNumber}</CardTitle>
-              </Col>
-              <Col xs="8">
-                <CardSubtitle>
+              <Col xs="12" className="justify-content-center">
+                <CardTitle>
+                  {this.props.adresseInfos.houseNumber}
+                  {"  "}
                   {this.props.adresseInfos.properties.name}
-                </CardSubtitle>
-
-                <CardText>
-                  {this.props.adresseInfos.properties.postcode}{" "}
+                  {"  "}
+                  {this.props.adresseInfos.properties.postcode}
+                  {"  "}
                   {this.props.adresseInfos.properties.city}
-                </CardText>
+                </CardTitle>
               </Col>
-              <Col xs="5">
+              <Col xs="12" className="justify-content-center">
                 {!this.state.visited ? (
                   <Button onClick={this.toggle} style={{ width: "100px" }}>
                     Visit It !

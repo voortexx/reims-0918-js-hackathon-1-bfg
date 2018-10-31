@@ -67,6 +67,11 @@ h5 {
   font-size: 1.4rem;
 }
 
+.posiiton {
+  display: block;
+  margin: auto;
+}
+
 .btn-primary {
   width: 350px;
   height: 350px;
