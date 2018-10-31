@@ -57,6 +57,31 @@
 h5 {
   font-family: "Creepster", cursive;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 25px;
+  padding-top: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer a,
+.footer a:active,
+.footer a:hover {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+.posiiton {
+  display: block;
+  margin: auto;
+}
+
 .btn-primary {
   width: 350px;
   height: 350px;
@@ -140,8 +165,23 @@ h5 {
 header h1 {
   font-size: 10rem;
   padding-top: 110px;
-  color: #8bbf42;
+  color: #fff;
   text-shadow: 2px 2px 10px #0000007a;
+  background: -webkit-linear-gradient(#81c55a, #93ff54, #54ca04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header h1 span {
+  font-size: 8rem;
+}
+
+.playerName {
+  color: #fff;
+  font-size: 3rem;
+  padding-top: 0;
+  margin-top: 5px;
+  text-align: left;
 }
 
 body {
@@ -163,9 +203,121 @@ body {
   box-shadow: 0px 0px 50px #a2ff21;
   color: #8bbf42;
   border: 1px solid #a2ff21;
+}
+
+.chasseinit.bag {
+  font-size: 1rem;
+}
+
+.homenave .btn,
+.homenav .btn-primary {
+  border: 1px solid #fff;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.homenav .btn-primary:hover,
+.homenav .btn-primary:active {
+  box-shadow: 0px 0px 100px #a2ff21;
+  color: #8bbf42;
+  border: 1px solid #a2ff21 !important;
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.homenav .btn-primary:hover .letter,
+.homenav .btn-primary:active .letter {
+  color: #8bbf42;
+}
+
+.oneAdress.card {
+  color: #fff;
+  background: url("img/toile.png");
+  background-size: cover;
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.oneAdress.card .btn,
+.modal-footer .btn {
+  background-color: #8bbf42;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.oneAdress.card h5.already {
+  color: #8bbf42;
+}
+
+h2 {
+  color: #fff;
+  text-shadow: 2px 2px 10px #0000007a;
+  background: -webkit-linear-gradient(#81c55a, #93ff54, #54ca04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-content .card-img-top {
+  max-height: 170px;
+}
+
+.modal-content {
+  background-color: #161e51 !important;
+  border: 1px solid #a2ff21 !important;
+  background: url("img/toile.png");
+  background-size: cover;
+}
+
+.modal-content .card {
+  border: 1px solid #fff;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.homenave .btn {
-  margin: 0;
+.modal-content .card .btn-secondary {
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  border: 1px solid #a2ff21;
+  font-weight: bold;
+  background-color: #8bbf42;
+}
+
+.modal-content .card .btn-secondary:hover {
+  box-shadow: 0px 0px 50px #a2ff21;
+  color: #8bbf42;
+  background-color: #fff;
+  border: 1px solid #a2ff21;
+}
+
+.modal-header,
+.modal-header span {
+  color: #fff;
+}
+
+.form-group input {
+  width: 300px;
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid #a2ff21;
+}
+
+.form-group input:hover {
+  box-shadow: 0px 0px 50px #a2ff21;
+  color: #8bbf42;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+::placeholder {
+  color: #282c34;
+}
+
+.form-group input:focus::placeholder {
+  color: #c1c5ce;
 }

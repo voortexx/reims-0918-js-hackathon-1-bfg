@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardImg, CardBody, CardTitle, CardText } from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle } from "reactstrap";
 
 const OneCandy = props => {
   return (
@@ -7,17 +7,16 @@ const OneCandy = props => {
       <Card>
         {props.oneCandy.image_url ? (
           <CardImg
+            height="150px"
             top
-            width="30%"
             src={props.oneCandy.image_url}
             alt="Card image cap"
           />
         ) : (
-          <i className="fas fa-ghost" />
+          <i className="fas fa-ghost fa-3x pt-4" />
         )}
         <CardBody>
           <CardTitle>{props.oneCandy.product_name}</CardTitle>
-          <CardText>{props.oneCandy.brands}</CardText>
         </CardBody>
       </Card>
     </div>

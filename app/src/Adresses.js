@@ -2,10 +2,8 @@ import React from "react";
 import {
   Card,
   CardDeck,
-  CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
   Col,
   Row,
   Button,
@@ -32,33 +30,32 @@ class Adresses extends React.Component {
       modal: !this.state.modal,
       visited: true
     });
+    this.props.witchCall();
   }
   render() {
     return (
       <Col xs="4" className="mb-3">
-        <Card>
+        <Card className="oneAdress">
           <CardBody>
             <Row>
-              <Col xs="4">
-                <CardTitle>{this.props.adresseInfos.houseNumber}</CardTitle>
-              </Col>
-              <Col xs="8">
-                <CardSubtitle>
+              <Col xs="12" className="justify-content-center">
+                <CardTitle>
+                  {this.props.adresseInfos.houseNumber}
+                  {"  "}
                   {this.props.adresseInfos.properties.name}
-                </CardSubtitle>
-
-                <CardText>
-                  {this.props.adresseInfos.properties.postcode}{" "}
+                  {"  "}
+                  {this.props.adresseInfos.properties.postcode}
+                  {"  "}
                   {this.props.adresseInfos.properties.city}
-                </CardText>
+                </CardTitle>
               </Col>
-              <Col xs="5">
+              <Col xs="12" className="justify-content-center">
                 {!this.state.visited ? (
                   <Button onClick={this.toggle} style={{ width: "100px" }}>
                     Visit It !
                   </Button>
                 ) : (
-                  <h5>Already Visit</h5>
+                  <h5 className="already">Already Visit</h5>
                 )}
               </Col>
             </Row>
@@ -98,7 +95,7 @@ class Adresses extends React.Component {
                             this.toggle();
                           }}
                         >
-                          Choisir ce bonbon
+                          Choose this Candy
                         </Button>
                       </CardBody>
                     </Card>

@@ -98,6 +98,59 @@ text {
   background-size: contain;
 }
 
+.title {
+  position: relative;
+}
+
+.drop {
+  color: #5aac17;
+  width: 0.1em;
+  height: 0.1em;
+  border-radius: 0 100% 100% 100%;
+  background-color: currentColor;
+  position: absolute;
+  top: 72%;
+  animation: drop 3s infinite both;
+}
+.drop:nth-child(6) {
+  left: 75%;
+}
+
+.drop:nth-child(2) {
+  left: 25%;
+  animation-delay: -0.4s;
+}
+
+.drop:nth-child(3) {
+  left: 44%;
+  animation-delay: -1.5s;
+}
+
+.drop:nth-child(4) {
+  left: 62%;
+  animation-delay: -0.8s;
+}
+
+.drop:nth-child(5) {
+  left: 70%;
+  animation-delay: -1.3s;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(0) scaleX(0.85) rotate(45deg);
+    animation-timing-function: ease-out;
+  }
+  60% {
+    transform: translateY(120%) scaleX(0.85) rotate(45deg);
+    animation-timing-function: ease-in;
+  }
+  80%,
+  100% {
+    transform: translateY(60vh) scaleX(0.85) rotate(45deg);
+  }
+}
+
 /* The foreground PNG as a Data URI
      Converted using: https://websemantics.uk/tools/image-to-data-uri-converter/
   */
