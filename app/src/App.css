@@ -193,6 +193,10 @@ body {
   border: 1px solid #a2ff21;
 }
 
+.chasseinit.bag {
+  font-size: 1rem;
+}
+
 .homenave .btn,
 .homenav .btn-primary {
   border: 1px solid #fff;
@@ -221,7 +225,8 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.oneAdress.card .btn {
+.oneAdress.card .btn,
+.modal-footer .btn {
   background-color: #8bbf42;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -238,4 +243,39 @@ h2 {
   background: -webkit-linear-gradient(#81c55a, #93ff54, #54ca04);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.modal-content .card-img-top {
+  max-height: 170px;
+}
+
+.modal-content {
+  background-color: #161e51 !important;
+  border: 1px solid #a2ff21 !important;
+}
+
+.modal-content .card {
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.modal-content .card .btn-secondary {
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  border: 1px solid #a2ff21;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-content .card .btn-secondary:hover {
+  box-shadow: 0px 0px 50px #a2ff21;
+  color: #8bbf42;
+  border: 1px solid #a2ff21;
+}
+
+.modal-header,
+.modal-header span {
+  color: #fff;
 }

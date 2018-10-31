@@ -8,7 +8,9 @@ const CandiesList = ({ myCandies, keepMyBag }) => {
       {myCandies.length > 0 && (
         <React.Fragment>
           <h2>Bag Items: {myCandies.length}</h2>
-          <Button onClick={() => keepMyBag()}>Keep my Bag</Button>
+          <Button className="chasseinit bag" onClick={() => keepMyBag()}>
+            Keep my Bag
+          </Button>
         </React.Fragment>
       )}
       <CardDeck className="justify-content-center">
