@@ -9,6 +9,10 @@ const HomeButtons = props => {
         onClick={() => props.tabsOpeningFunction("adresse")}
         color="primary"
       >
+        <i
+          style={{ height: "150px", fontSize: "150px" }}
+          className="d-block fas fa-map-marker-alt mb-3"
+        />
         <div id="word">
           <div id="glitches">
             <span id="main">Adresses</span>
@@ -30,9 +34,13 @@ const HomeButtons = props => {
         onClick={() => props.tabsOpeningFunction("inventaire")}
         color="primary"
       >
+        <i
+          style={{ height: "150px", fontSize: "150px" }}
+          className="d-block fas fa-shopping-bag mb-3"
+        />
         <div id="word">
           <div id="glitches">
-            <span id="main2">Inventory</span>
+            <span id="main2">Inventory {props.myCandies.length}</span>
             <div id="letters">
               <span className="letter">I</span>
               <span className="letter">n</span>
@@ -46,7 +54,6 @@ const HomeButtons = props => {
             </div>
           </div>
         </div>
-        <span className="nbrecandy">{props.myCandies.length}</span>
       </Button>
     </Row>
   );
