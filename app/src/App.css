@@ -57,6 +57,12 @@
 h5 {
   font-family: "Creepster", cursive;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
 .btn-primary {
   width: 350px;
   height: 350px;

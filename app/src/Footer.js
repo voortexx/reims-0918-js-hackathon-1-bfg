@@ -4,7 +4,7 @@ import { Container, Row, Col } from "reactstrap";
 const Footer = () => (
   <Container fluid>
     <Row className="footer">
-      <Col className="wilders" sm="6">
+      <Col>
         Made with <span className="pumpkin">🎃</span> by{" "}
         <a
           className="test"

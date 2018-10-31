@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Button } from "reactstrap";
+import { Container, Button, Row } from "reactstrap";
 
 import HomeButtons from "./HomeButtons";
 import Header from "./Header";
@@ -149,7 +149,9 @@ class App extends Component {
             />
           )}
         </Container>
-        <Footer />
+        <footer className="footer col-4 offset-8">
+          <Footer />
+        </footer>
       </div>
     );
   }
