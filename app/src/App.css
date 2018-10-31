@@ -176,6 +176,22 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.homenave .btn {
-  margin: 0;
+.homenave .btn,
+.homenav .btn-primary {
+  border: 1px solid #fff;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.homenav .btn-primary:hover,
+.homenav .btn-primary:active {
+  box-shadow: 0px 0px 50px #a2ff21;
+  color: #8bbf42;
+  border: 1px solid #a2ff21 !important;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.homenav .btn-primary:hover .letter,
+.homenav .btn-primary:active .letter {
+  color: #8bbf42;
 }
