@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Container, Button, Row } from "reactstrap";
 
 import HomeButtons from "./HomeButtons";
@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import getRandomNumber from "./getRandomNumber";
 import FullInventory from "./FullInventory";
 import AdressesListing from "./AdressesListing";
+import witch from "./img/witch.gif";
 
 import "./App.css";
 
@@ -21,12 +22,15 @@ class App extends Component {
       huntingOpen: false,
       adresseOpen: false,
       myCandiesOpen: false,
-      fullBag: []
+      fullBag: [],
+      witchPower: 0,
+      witchCall: false
     };
     this.tabsOpeningSystem = this.tabsOpeningSystem.bind(this);
     this.selectCandy = this.selectCandy.bind(this);
     this.backButton = this.backButton.bind(this);
     this.keepMyBag = this.keepMyBag.bind(this);
+    this.witchCall = this.witchCall.bind(this);
   }
 
   componentDidMount() {
@@ -104,8 +108,10 @@ class App extends Component {
       }
     });
     this.setState({
-      myCandies: [...this.state.myCandies, newCandy]
+      myCandies: [...this.state.myCandies, newCandy],
+      witchPower: this.state.witchPower + 1
     });
+    this.witchCall();
   }
 
   backButton() {
@@ -120,8 +126,23 @@ class App extends Component {
     this.setState({
       adresseOpen: false,
       myCandies: [],
+      witchPower: 0,
       fullBag: [...this.state.fullBag, newBag]
     });
+  }
+
+  witchCall() {
+    const randomN = getRandomNumber(10);
+    const witchPower = this.state.witchPower;
+    const result = randomN - witchPower;
+    if (result < 0) {
+      this.setState({
+        witchCall: true,
+        adresseOpen: false,
+        myCandies: [],
+        witchPower: 0
+      });
+    }
   }
 
   render() {
@@ -129,21 +150,35 @@ class App extends Component {
       <div className="App font">
         <Header />
         <Container fluid>
-          {!this.state.huntingOpen ? (
-            <Button
-              className="chasseinit"
-              onClick={() => this.candiesAttribution()}
-            >
-              Let's Hunt
-            </Button>
+          {!this.state.witchCall ? (
+            !this.state.huntingOpen ? (
+              <Button
+                className="chasseinit"
+                onClick={() => this.candiesAttribution()}
+              >
+                Let's Hunt
+              </Button>
+            ) : (
+              !this.state.adresseOpen &&
+              (!this.state.myCandiesOpen && (
+                <HomeButtons
+                  tabsOpeningFunction={this.tabsOpeningSystem}
+                  myCandies={this.state.myCandies}
+                />
+              ))
+            )
           ) : (
-            !this.state.adresseOpen &&
-            (!this.state.myCandiesOpen && (
-              <HomeButtons
-                tabsOpeningFunction={this.tabsOpeningSystem}
-                myCandies={this.state.myCandies}
-              />
-            ))
+            <Fragment>
+              <h2>A Witch stole all your bag!</h2>
+              <img src={witch} alt="witch" />
+              <br />
+              <Button
+                className="chasseinit mt-3"
+                onClick={() => this.backButton()}
+              >
+                Back
+              </Button>
+            </Fragment>
           )}
           {this.state.adresseOpen && (
             <AdressesListing
