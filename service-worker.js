@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/reims-0918-js-hackathon-1-bfg/precache-manifest.b12db4b76388b79b41aa14c0b7f2ca09.js"
+  "/reims-0918-js-hackathon-1-bfg/precache-manifest.b779cdf8a21bbfebf0062f336d731341.js"
 );
 
 workbox.clientsClaim();
